@@ -158,6 +158,5 @@ data.push({
 
 data.forEach((item) => {
   articles.appendChild(articleMaker(item))
-  console.log(articles)
 })
 

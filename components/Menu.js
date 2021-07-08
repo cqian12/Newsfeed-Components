@@ -45,9 +45,7 @@ function menuMaker (items) {
     menuList.appendChild(menuItem)
   })
 
-  let menuButton = document.getElementById('.menu-button')
-  menu.appendChild(menuButton)
-
+  let menuButton = document.querySelector('.menu-button')
   menuButton.addEventListener('click', () => {
     menu.classList.toggle('menu--open')
   })
@@ -55,6 +53,6 @@ function menuMaker (items) {
   return menu
 }
 
-let header = document.getElementById('header')
+let header = document.querySelector('.header')
 
 header.appendChild(menuMaker(menuItems))
