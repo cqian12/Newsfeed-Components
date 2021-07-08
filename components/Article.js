@@ -127,16 +127,37 @@ function articleMaker (artObj) {
   date.classList.add('date')
   article.appendChild(date)
 
+  const paragraphPlace = ['first','second','third']
+
   for (let i =0; i < 3; i++) {
     let paragraph = document.createElement('p')
-    //paragraph.textContent = artObj.
+    paragraph.textContent = artObj[`${paragraphPlace[i]}Paragraph`]
     article.appendChild(paragraph)
   }
 
   let button = document.createElement('span')
+  button.textContent = '+'
   button.classList.add('expandButton')
-  button.addEventListener()
+  button.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+  })
   article.appendChild(button)
 
   return article
 } 
+
+let articles = document.querySelector('.articles')
+
+data.push({
+  title: 'Charles added a new article',
+  date: 'Jul 7th, 2021',
+  firstParagraph: 'a paragraph',
+  secondParagraph:'a second paragraph',
+  thirdParagraph: 'yet another paragraph'
+})
+
+data.forEach((item) => {
+  articles.appendChild(articleMaker(item))
+  console.log(articles)
+})
+
