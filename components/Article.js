@@ -116,4 +116,27 @@ const data = [
 */
 function articleMaker (artObj) {
   let article = document.createElement('div')
+  article.classList.add('article')
+
+  let title = document.createElement('h2')
+  title.textContent = artObj.title
+  article.appendChild(title)
+
+  let date = document.createElement('p')
+  date.textContent = artObj.date
+  date.classList.add('date')
+  article.appendChild(date)
+
+  for (let i =0; i < 3; i++) {
+    let paragraph = document.createElement('p')
+    //paragraph.textContent = artObj.
+    article.appendChild(paragraph)
+  }
+
+  let button = document.createElement('span')
+  button.classList.add('expandButton')
+  button.addEventListener()
+  article.appendChild(button)
+
+  return article
 } 
